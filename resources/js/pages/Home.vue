@@ -1,7 +1,7 @@
 <template>
-  <div class="absolute z-20 top-0 bottom-10 bg-gray-100 dark:bg-gray-900 md:left-0 md:flex md:w-88 md:flex-col md:fixed md:inset-y-0"
-       :class="[fileStore.sidebarOpen ? 'left-0 right-0 md:left-auto md:right-auto' : '-left-[200%] right-[200%] md:left-auto md:right-auto']"
-  >
+  <div
+    class="absolute z-20 top-0 bottom-10 bg-gray-100 dark:bg-gray-900 md:left-0 md:flex md:w-88 md:flex-col md:fixed md:inset-y-0"
+    :class="[fileStore.sidebarOpen ? 'left-0 right-0 md:left-auto md:right-auto' : '-left-[200%] right-[200%] md:left-auto md:right-auto']">
     <file-list></file-list>
   </div>
 
@@ -12,16 +12,16 @@
   <div class="absolute bottom-4 right-4 flex items-center">
     <p class="text-xs text-gray-500 dark:text-gray-400 mr-5 -mb-0.5">
       <template v-if="logViewerStore.performance?.requestTime">
-        <span><span class="hidden md:inline">Memory: </span><span class="font-semibold">{{ logViewerStore.performance.memoryUsage }}</span></span>
+        <span><span class="hidden md:inline">Memory: </span><span class="font-semibold">{{
+          logViewerStore.performance.memoryUsage }}</span></span>
         <span class="mx-1.5">&middot;</span>
-        <span><span class="hidden md:inline">Duration: </span><span class="font-semibold">{{ logViewerStore.performance.requestTime }}</span></span>
+        <span><span class="hidden md:inline">Duration: </span><span class="font-semibold">{{
+          logViewerStore.performance.requestTime }}</span></span>
         <span class="mx-1.5">&middot;</span>
       </template>
-      <span><span class="hidden md:inline">Version: </span><span class="font-semibold">{{ LogViewer.version }}</span></span>
+      <span><span class="hidden md:inline">Version: </span><span class="font-semibold">{{ LogViewer.version
+          }}</span></span>
     </p>
-    <a href="https://www.buymeacoffee.com/arunas" target="_blank" v-if="LogViewer.show_support_link">
-      <bmc-logo class="h-6 w-auto" title="Support me by buying me a cup of coffee ❤️" />
-    </a>
   </div>
 
   <keyboard-shortcuts-overlay />
